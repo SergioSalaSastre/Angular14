@@ -1,0 +1,48 @@
+.navbar {
+  background-color: #002244 !important; /* Azul oscuro dominante */
+  padding: 1rem 1.5rem; /* Ajusta el padding si lo deseas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para un efecto de elevación */
+}
+
+/* Estilos para el brand/logo */
+.navbar-brand {
+  color: #ffffff !important; /* Texto blanco para el brand */
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #add8e6 !important; /* Azul claro al pasar el ratón */
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar-nav .nav-link {
+  color: #ffffff !important; /* Texto blanco para los enlaces */
+  font-weight: 500;
+  margin-left: 15px; /* Espacio entre los elementos del menú */
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex; /* Esto hace que el enlace sea un contenedor flex */
+  align-items: center; /* Esto alinea verticalmente el icono y el texto */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #add8e6 !important; /* Azul claro al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* Estilos para el icono del carrito dentro del enlace */
+.navbar-nav .nav-link .fas.fa-shopping-cart {
+  margin-right: 8px; /* Espacio entre el icono y la palabra "Carrito" */
+  color: #ffffff; /* Asegura que el icono también sea blanco */
+  font-size: 1.1em; /* Ligeramente más grande que el texto si lo deseas */
+}
+
+/* Estilos para el botón del "toggler" (para móviles) */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1); /* Borde blanco sutil */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Icono de hamburguesa blanco */
+}

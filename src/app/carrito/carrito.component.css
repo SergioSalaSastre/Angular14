@@ -1,0 +1,60 @@
+.img-thumbnail {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.list-group-item {
+  border-left: 5px solid #002244; /* Borde azul oscuro en el lado izquierdo */
+  margin-bottom: 10px; /* Espacio entre los ítems del carrito */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+  border-radius: 5px; /* Bordes redondeados */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Estilo para los botones */
+.btn-primary, .btn-danger, .btn-success, .btn-warning {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #002244;
+  border-color: #002244;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #003366;
+  border-color: #003366;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529; /* Texto oscuro para el botón de vaciar */
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}

@@ -1,0 +1,54 @@
+<div class="container my-5">
+  <h2 class="mb-4 text-center">Tu Carrito de Compras</h2>
+
+  <div *ngIf="(itemCount$ | async) === 0; else cartContent" class="alert alert-info text-center" role="alert">
+    El carrito está vacío. ¡Añade algunos productos!
+    <br>
+    <button class="btn btn-primary mt-3" [routerLink]="['/productos']">Ir a la tienda</button>
+  </div>
+
+  <ng-template #cartContent>
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed"
+              *ngFor="let item of cartItems$ | async; let i = index">
+            <div class="d-flex align-items-center">
+              <img [src]="item.imageUrl" alt="{{item.name}}" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+              <div>
+                <h6 class="my-0">{{ item.name }}</h6>
+                <small class="text-muted">{{ item.description }}</small>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <span class="text-muted">{{ item.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+              <button class="btn btn-danger btn-sm mt-2" (click)="removeFromCart(i)">
+                Eliminar
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span>Resumen del Pedido</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total de ítems</span>
+              <strong>{{ itemCount$ | async }}</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (€)</span>
+              <strong>{{ totalPrice$ | async | currency:'EUR':'symbol':'1.2-2' }}</strong>
+            </li>
+          </ul>
+          <button class="btn btn-success btn-lg btn-block mb-2">Proceder al Pago</button>
+          <button class="btn btn-warning btn-block" (click)="clearCart()">Vaciar Carrito</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

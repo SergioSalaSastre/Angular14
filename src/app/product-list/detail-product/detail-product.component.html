@@ -1,0 +1,23 @@
+<div class="container my-5">
+  <div *ngIf="product$ | async as product; else loading">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="product.imageUrl" class="img-fluid rounded" alt="{{product.name}}">
+      </div>
+      <div class="col-md-6">
+        <h2>{{ product.name }}</h2>
+        <p class="lead">{{ product.description }}</p>
+        <h3 class="text-primary">{{ product.price | currency:'EUR':'symbol':'1.2-2' }}</h3>
+        <button class="btn btn-success btn-lg mt-3" (click)="agregarAlCarrito()">
+          Agregar al Carrito
+        </button>
+        <button class="btn btn-secondary btn-lg mt-3 ms-2" routerLink="/productos">
+          Volver a la Tienda
+        </button>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>
+    <div class="text-center">Cargando producto...</div>
+  </ng-template>
+</div>
